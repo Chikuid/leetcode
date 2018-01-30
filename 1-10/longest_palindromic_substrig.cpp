@@ -42,23 +42,23 @@ string longestPalindrome(string s) {
   pair<int, int> temp;
   int l = s.length();
   for (int i = 0; i < l; i++) {
-    cout<<i<<'\n';
-    cout<<"false"<<' ';
+    //cout<<i<<'\n';
+    //cout<<"false"<<' ';
     temp = longestPalindromeAroundPivot(s, i, false);
-    cout<<"Return value: "<<temp.first<<' '<<temp.second<<'\n';
+    //cout<<"Return value: "<<temp.first<<' '<<temp.second<<'\n';
     if ((temp.second - temp.first) > max_len) {
       ans = temp;
       max_len = temp.second - temp.first;
     }
-    cout<<"true"<<'\n';
+    //cout<<"true"<<'\n';
     temp = longestPalindromeAroundPivot(s, i, true);
-    cout<<"Return value: "<<temp.first<<' '<<temp.second<<'\n';
+    //cout<<"Return value: "<<temp.first<<' '<<temp.second<<'\n';
     if ((temp.second - temp.first) > max_len) {
       ans = temp;
       max_len = temp.second - temp.first;
     }
   }
-  cout<<"Answer: "<<ans.first<<' '<<ans.second;
+  //cout<<"Answer: "<<ans.first<<' '<<ans.second;
   return s.substr(ans.first, max_len + 1);
 }
 
